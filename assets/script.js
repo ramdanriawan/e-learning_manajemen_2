@@ -1,0 +1,1 @@
+//fungsi untuk mengaktifkan semua user

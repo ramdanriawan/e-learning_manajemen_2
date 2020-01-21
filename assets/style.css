@@ -1,0 +1,24 @@
+#datatabel_filter {
+  float: right;
+}
+#datatabel_length {
+  display: inline-block;
+}
+
+#datatabel_info {
+  display: inline-block;
+}
+
+#datatabel_paginate {
+  display: inline-block;
+  float: right;
+}
+
+ul.pagination {
+  float: right;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color:cadetblue;
+}
