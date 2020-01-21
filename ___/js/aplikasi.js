@@ -73,15 +73,13 @@ $(document).ready(function () {
         } else {
             pagination("datatabel", base_url + "adm/h_ujian/data", []);
         }
-    }  else if (url == "h_latihan") {
+    } else if (url == "h_latihan") {
         if (url2 == "det") {
             pagination("datatabel", base_url + "adm/h_latihan/data_det/" + url3, []);
         } else {
             pagination("datatabel", base_url + "adm/h_latihan/data", []);
         }
-    } 
-    
-    else if (url == "m_ujian") {
+    } else if (url == "m_ujian") {
         if (url2 == "det") {
             pagination("datatabel", base_url + "adm/m_ujian/data_det/" + url3, []);
         } else {
@@ -344,7 +342,7 @@ function m_ujian_s() {
 
 function m_latihan_s() {
     // console.log('okkkk');
-    
+
     var f_asal = $("#f_ujian");
     var form = getFormData(f_asal);
     $.ajax({

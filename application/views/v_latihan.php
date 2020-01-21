@@ -51,12 +51,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand"><i class="glyphicon glyphicon-globe"></i> Latihan Online</a>
+            <a class="navbar-brand"><i class="glyphicon glyphicon-globe"></i> Ujian Online</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav navbar-right" style="z-index: 1000">
-                <li><a class="#" onclick="return simpan_akhir();"><i class="glyphicon glyphicon-stop"></i> Selesai Latihan</a></li>
+                <li><a class="#" onclick="return simpan_akhir();"><i class="glyphicon glyphicon-stop"></i> Selesai Ujian</a></li>
             </ul>
         </div>
     </div>
@@ -389,17 +389,17 @@
 
     simpan_akhir = function() {
         simpan();
-        if (confirm('Latihan telah selesai. Anda yakin akan mengakhiri tes ini..?')) {
+        if (confirm('Ujian telah selesai. Anda yakin akan mengakhiri tes ini..?')) {
             simpan();
             $.ajax({
                 type: "GET",
-                url: base_url+"adm/ikut_latihan/simpan_akhir/"+id_tes,
+                url: base_url+"adm/ikut_ujian/simpan_akhir/"+id_tes,
                 beforeSend: function() {
                     $('.ajax-loading').show();    
                 },
                 success: function(r) {
                     if(r.status == "ok") {
-                        window.location.assign("<?php echo base_url(); ?>adm/sudah_selesai_latihan/"+id_tes); 
+                        window.location.assign("<?php echo base_url(); ?>adm/sudah_selesai_ujian/"+id_tes); 
                     }
                 }
             });

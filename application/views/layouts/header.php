@@ -24,11 +24,13 @@
     <!-- own css -->
     <link rel="stylesheet" href="<?php echo base_url('assets/style.css'); ?>">
     <link href="<?php echo base_url('plugins/bower_components/chartist-js/dist/chartist.min.css" rel="stylesheet'); ?>">
-    <link href="<?php echo base_url('plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css'); ?>" rel="stylesheet">
+    <link
+        href="<?php echo base_url('plugins/bower_components/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.css'); ?>"
+        rel="stylesheet">
 </head>
 
 <body class="fix-header" cz-shortcut-listen="true">
-<div id="tampilkan_modal"></div>
+    <div id="tampilkan_modal"></div>
     <div class="preloader" style="display: none;">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
@@ -61,7 +63,9 @@
                     </li>
 
                     <li>
-                        <a class="profile-pic active" href="#"><b class="hidden-xs"> <?php echo $this->session->userdata('admin_nama'); ?></b> <i class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
+                        <a class="profile-pic active" href="#"><b class="hidden-xs">
+                                <?php echo $this->session->userdata('admin_nama'); ?></b> <i
+                                class="fa fa-user-circle fa-2x" aria-hidden="true"></i></a>
                     </li>
                 </ul>
             </div>
@@ -75,14 +79,16 @@
                     </div>
                     <ul class="nav in" id="side-menu">
                         <li style="margin-top: 70px;">
-                            <a href="<?php echo base_url(); ?>" class="<?php echo $this->uri->segment(2) == '' ? 'active' : ''; ?>">
+                            <a href="<?php echo base_url(); ?>"
+                                class="<?php echo $this->uri->segment(2) == '' ? 'active' : ''; ?>">
                                 <i class="fa fa-clock-o fa-fw" aria-hidden="true"></i>
                                 Dashboard
                             </a>
                         </li>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_siswa'); ?>" class='<?php echo $this->uri->segment(2) == 'm_siswa' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_siswa'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_siswa' ? 'active' : ''; ?>'>
                                 <i class="fa fa-user-alt" aria-hidden="true"></i>
                                 Data Siswa
                             </a>
@@ -90,7 +96,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_guru'); ?>" class='<?php echo $this->uri->segment(2) == 'm_guru' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_guru'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_guru' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fas fa-user-tie"></i>
                                 Data Guru
                             </a>
@@ -98,7 +105,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', '', ''])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_mapel'); ?>" class='<?php echo $this->uri->segment(2) == 'm_mapel' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_mapel'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_mapel' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-book" aria-hidden="true"></i>
                                 Data Mapel
                             </a>
@@ -106,7 +114,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', '', 'guru'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_soal/ujian'); ?>" class='<?php echo $this->uri->segment(2) == 'm_soal' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_soal/ujian'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_soal' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Soal
                             </a>
@@ -114,7 +123,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', 'siswa'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/ikuti_latihan'); ?>" class='<?php echo $this->uri->segment(2) == 'm_ikuti_latihan' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/ikuti_latihan'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_ikuti_latihan' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Latihan Siswa
                             </a>
@@ -122,7 +132,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', 'siswa'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/ikuti_ujian'); ?>" class='<?php echo $this->uri->segment(2) == 'm_ikuti_ujian' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/ikuti_ujian'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_ikuti_ujian' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Ujian Siswa
                             </a>
@@ -130,7 +141,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', 'siswa', 'guru'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_materi'); ?>" class='<?php echo $this->uri->segment(2) == 'm_materi' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_materi'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_materi' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Materi
                             </a>
@@ -138,7 +150,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', '', 'guru'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_latihan'); ?>" class='<?php echo $this->uri->segment(2) == 'm_latihan' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_latihan'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_latihan' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Latihan
                             </a>
@@ -146,7 +159,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', '', 'guru'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/m_ujian'); ?>" class='<?php echo $this->uri->segment(2) == 'm_ujian' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/m_ujian'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'm_ujian' ? 'active' : ''; ?>'>
                                 <i class="nav-icon fa fa-paper-plane" aria-hidden="true"></i>
                                 Data Ujian
                             </a>
@@ -154,7 +168,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', 'guru', ''])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/h_latihan'); ?>" class='<?php echo $this->uri->segment(2) == 'h_latihan' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/h_latihan'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'h_latihan' ? 'active' : ''; ?>'>
                                 <i class="nav-icon nav-icon fas fa-tachometer-alt"></i>
                                 Data Hasil Latihan
                             </a>
@@ -162,7 +177,8 @@
                         <?php endif;?>
                         <?php if (in_array($this->session->userdata('admin_level'), ['admin', 'guru', 'ortu'])): ?>
                         <li>
-                            <a href="<?php echo base_url('adm/h_ujian'); ?>" class='<?php echo $this->uri->segment(2) == 'h_ujian' ? 'active' : ''; ?>'>
+                            <a href="<?php echo base_url('adm/h_ujian'); ?>"
+                                class='<?php echo $this->uri->segment(2) == 'h_ujian' ? 'active' : ''; ?>'>
                                 <i class="nav-icon nav-icon fas fa-tachometer-alt"></i>
                                 Data Hasil Ujian
                             </a>
@@ -170,14 +186,15 @@
                         <?php endif;?>
 
                         <li><a href="#" class='nav-link' onclick="return rubah_password();">
-                            <i class="nav-icon nav-icon fa fa-key" aria-hidden="true"></i>
-                            Ubah Password
-                        </a></li>
+                                <i class="nav-icon nav-icon fa fa-key" aria-hidden="true"></i>
+                                Ubah Password
+                            </a></li>
                     </ul>
                     <div class="center p-20">
-                        <a  class='btn btn-danger btn-block waves-effect waves-light' href="<?php echo base_url('adm/logout'); ?>" onclick="return confirm('keluar..?');">
+                        <a class='btn btn-danger btn-block waves-effect waves-light'
+                            href="<?php echo base_url('adm/logout'); ?>" onclick="return confirm('keluar..?');">
                             <i class="fa fa-power-off" aria-hidden="true"></i>
-                             Logout</a>
+                            Logout</a>
                     </div>
                 </div>
                 <div class="slimScrollBar"
